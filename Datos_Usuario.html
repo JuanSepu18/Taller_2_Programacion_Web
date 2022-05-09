@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos Usuario</title>
+</head>
+<body>
+    <h2>Rellena tu CV</h2>
+    <div>
+        Nombre
+        <br>
+        <input type="text" name="Nombre" value="" size="30">
+        <br>
+        Apellidos
+        <br>
+        <input type="text" name="Apellidos" value="" size="60">
+        <br>
+        Contraseña
+        <br>
+        <input type="password" name="Contraseña" value="" size="30">
+        <br>
+        <br>
+        Confirmar Contraseña
+        <br>
+        <input type="password" name="ConfirmContraseña" value="" size="30">
+        <br>
+        Identificación
+        <br>
+        <select> <option>CC</option> <option>TI</option> <option>CE</option></select>
+        <input type="number" name="Identificacion" value="" max="12">
+        <br>
+        Sexo 
+        <br>
+            <input type="radio" name="Sexo" id="Hombre">Hombre
+            <br>
+            <input type="radio" name="Sexo" id="Mujer">Mujer
+        <br>
+        <br>
+        Incluir mi foto
+        <br>
+        <input type="file" name="foto" id="Examinar">
+        <br>
+        <br>
+        <input type="checkbox" name="Estudiante" id="Estudiante"> Estudiante....
+        <br>
+        <br>
+        <fieldset>
+            <legend>Datos personales</legend>
+            Departamento
+            <br>
+            <select><option>- selecciona -</option><option>Santander</option><option>Norte de Santander</option><option>Antioquia</option><option>Cundinamarca</option><option>Boyacá</option><option>Valle del cauca</option><option>Magdalena</option><option>Cesar</option><option></option><option>Meta</option></select>
+            <br>
+            <br>
+            Fecha de nacimiento
+            <br>
+            <input type="number" name="Dia" id="Dia" min="1" max="2"> de
+            <select><option>Enero</option><option>Febrero</option><option>Marzo</option><option>Abril</option><option>Mayo</option><option>Junio</option><option>Julio</option><option>Agosto</option><option>Septiembre</option><option>Octubre</option><option>Noviembre</option><option>Diciembre</option></select>
+            de <input type="number" name="Año" id="Año" min="1" max="4">
+            <br>
+            <br>
+            Temas de interés
+            <br>
+            <select multiple name="Temasinteres" id="Temasinteres" size="5">
+                <option>Administración de bases de datos</option>
+                <option>Análisis y programación</option>
+                <option>Arquitectura</option>
+                <option>Calidad</option>
+                <option>ERP, CRM, Business Intelligence</option>
+                <option>Desarrollo Frontend</option>
+                <option>Desarrollo Backend</option>
+            </select>
+        </fieldset>
+        <a href="Index.html"><input type="button" value="Guardar cambios"></a>
+        <a href="Datos_Usuario.html"><input type="button" value="Borrar los datos introducidos"></a>
+    </div>
+</body>
+</html>
