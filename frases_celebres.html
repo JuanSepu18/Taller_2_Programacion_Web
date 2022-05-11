@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frases Célebres</title>
+</head>
+<body>
+    <h1>Frases celebres</h1>
+    <form action="mailto:paula.uzcategui68@gmail.com"
+    method="POST"
+    name="Frases celebres form">
+        <label for="username"><strong>Nombre de usuario:</strong></label>
+        <br>
+        <input type="text" id="username" name="username" value="">
+        <br>
+        <br>
+        <fieldset>
+            <legend>Frases celebres</legend>
+            <label>Escriba dos frases y seleccione la principal: </label>
+            <br>
+            <label for="frase1"><strong>Frase #1</strong></label>
+            <br>
+            <input type="radio" name="frase_principal" id="frase1">
+            <textarea name="frase1" id="frase1" cols="30" rows="2"></textarea>
+            <br>
+            <br>
+            <label for="frase1"><strong>Frase #2</strong></label>
+            <br>
+            <input type="radio" name="frase_principal" id="frase2">
+            <textarea name="frase2" id="frase2" cols="30" rows="2"></textarea>
+        </fieldset>
+        <br>
+        <a href="Index.html"><input type="button" value="Volver"></a>
+        <button type="submit">Enviar email</button>
+    </form>
+</body>
+</html>
