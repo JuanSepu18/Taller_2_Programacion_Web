@@ -1,2 +1,2 @@
-# Taller_2_Programacion_Web
+# 👾 Tallereres Programación web 👾
  Repositorio creado por Paula Andrea Uzcátegui León y Juan Esteban Sepúlveda Tapias.
