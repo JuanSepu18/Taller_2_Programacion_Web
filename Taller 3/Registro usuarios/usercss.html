@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User css</title>
+    <link rel="stylesheet" href="usercss.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <div class="volver">
+            <a href="../index.html">Volver</a>
+        </div>
+        <h1>• Registrate •</h1>
+        <form action="" method="post">
+            <fieldset class="fieldset_registrobasico">
+                <div class="form_field">
+                    <label for="username">Nombre de usuario: </label>
+                    <div class="username_container"><span>@</span><input type="text" name="username" id="username" required></div>
+                </div>
+                <div class="form_field">
+                    <label for="password">Contraseña: </label>
+                    <input type="password" name="password" id="password" required>
+                </div>
+            </fieldset>
+            <fieldset class="fieldset_detalles">
+                <legend>Datos personales</legend>
+                <div class="form_field nombre">
+                    <label for="nombre">Nombre: </label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre">    
+                </div>
+                <div class="form_field apellido">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" id="apellido" name="apellido" placeholder="Ingresa tu apellido">
+                </div>
+                <div  class="form_field pais">
+                    <label for="pais">Selecciona tu pais</label>
+                    <select name="pais" id="pais">
+                        <option value="" selected disabled hidden>Selecciona</option>
+                        <option value="1">Colombia</option>
+                        <option value="2">Venezuela</option>
+                        <option value="3">México</option>
+                        <option value="4">Ecuador</option>
+                        <option value="4">Peru</option>
+                    </select>
+                </div>
+                <div class="form_field direccion" >
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" name="direccion" id="direccion" placeholder="Ingresa tu dirección">
+                </div>
+                <div class="form_field email">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" placeholder="example@domain.com">
+                </div>
+                <div class="form_field telefono">
+                    <label for="telefono">Telefono</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Ingresa tu celular">
+                </div>
+            </fieldset>
+            <div class="submit_container">
+            <input type="submit" class="boton envio" value="Registrarme">
+            </div>
+        </form>
+    </main>
+</body>
+</html>
