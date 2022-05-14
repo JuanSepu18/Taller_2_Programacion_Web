@@ -5,18 +5,153 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="carbootstrap.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <title>Carros con Bootstrap</title>
 </head>
 <body>
-    <h1>Registra autos</h1>
+    <div class="main">
+        <h1 class="row justify-content-md-center">Registra autos</h1>
+    <form class="row justify-content-md-center">
+        <div class="container-fluid justify-content-md-center gy-3">
+            <div>
+                <div class="form-floating">
+                    <select class="form-select" id="usuario" aria-label="Floating label select usuario" required>
+                        <option value="" selected disabled hidden>Selecciona...</option>
+                        <option value="1">Ana Marquez</option>
+                        <option value="2">Camilo Perez</option>
+                        <option value="3">Ximena Juliana</option>
+                        <option value="4">Jorge Drexler</option>
+                    </select>
+                    <label for="usuario">Usuario</label>
+                </div>
+             </div>
+        </div>
+        <fieldset class="container gy-4">
+                <div class="row">
+                    <div class="input-group mb-3 col-sm">
+                        <label class="input-group-text" for="tipoCoche">Tipo</label>
+                        <select class="form-select form-control" id="tipoCoche" required>
+                            <option value="" selected disabled hidden>Selecciona...</option>
+                            <option value="1">Urbano</option>
+                            <option value="2">Subcompacto</option>
+                            <option value="3">Descapotable</option>
+                            <option value="4">Familiar</option>
+                        </select>
+
+                    </div>
+                    <div class="input-group mb-3 col-sm">
+                        <label class="input-group-text" for="tipoCombustible">Combustible</label>
+                        <select class="form-select form-control" id="tipoCombustible" required>
+                            <option value="" selected disabled hidden>Selecciona...</option>
+                            <option value="1">Gasolina</option>
+                            <option value="2">Diésel</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group mb-3 col-sm">
+                        <label class="input-group-text" for="marca">Marca</label>
+                        <select class="form-select form-control" id="marca" required>
+                          <option selected disabled hidden>Selecciona...</option>
+                          <option value="1">Toyota</option>
+                          <option value="2">Hyundai</option>
+                          <option value="3">Honda</option>
+                          <option value="4">Mercedes</option>
+                          <option value="4">Chevrolet</option>
+                          <option value="5">Volkswagen</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3 col-sm">
+                        <span class="input-group-text" id="modelo">Modelo</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="modelo" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group mb-3 col-sm">
+                        <span class="input-group-text" id="modelo">Año</span>
+                        <input type="text" class="form-control date-own " aria-label="Sizing example input" aria-describedby="anio" required>
+                    </div>
+                    <div class="input-group mb-3 col-sm">
+                        <span class="input-group-text" id="modelo">Caja</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="caja" required>
+                    </div>
+                    <div class="input-group mb-3 col-sm">
+                        <span class="input-group-text" id="modelo">Motor</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="motor" required>
+                    </div>
+                </div>
+        </fieldset>
+        <fieldset class="container">
+            <div class="row gy-3">
+                <div class="row gy-3">
+                    <div class="col-x">
+                        <div class="form-floating">
+                            <select class="form-select" id="estado" aria-label="" required>
+                                <option selected disabled hidden>Selecciona</option>
+                                <option value="1">Usado</option>
+                                <option value="2">Nuevo</option>
+                                <option value="3">Restaurado</option>
+                            </select>
+                            <label for="estado">Estado</label>
+                        </div>
+                    </div>
+                    <div class="col-x">
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                            <label for="floatingTextarea2">Detalles</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row gy-3">
+                    <div class="input-group mb-3 container-fluid">
+                        <div class="form-floating col-sm-6">
+                            <select type="text" class="form-control" id="moneda" placeholder="Moneda" aria-label="Moneda">
+                                <option value="1">Peso colombiano</option>
+                                <option value="2">Peso mexicano</option>
+                                <option value="3">Dolar americano</option>
+                                <option value="4">Euros</option>
+                                <option value="5">Libras</option>
+                            </select>
+                            <label for="moneda">Moneda</label>
+                        </div>
+                        <span class="input-group-text">$</span>
+                        <input type="number" class="form-control col-sm-6" placeholder="0" aria-label="Precio">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="mb-3 col-sm-4">
+                    <label for="formFile" class="form-label">Imagen 1</label>
+                    <input class="form-control" type="file" id="formFile">
+                </div>
+                <div class="mb-3 col-sm-4">
+                    <label for="formFile" class="form-label">Imagen 2</label>
+                    <input class="form-control" type="file" id="formFile">
+                </div>
+                <div class="mb-3 col-sm-4">
+                    <label for="formFile" class="form-label">Imagen 3</label>
+                    <input class="form-control" type="file" id="formFile">
+                </div>
+            </div>
+        </fieldset>
+        <div class="container-sm">
+            <button class="btn btn-primary " type="submit">Enviar</button>
+        </div>
+      </form>
     
-<!-- Bootstrap js -->
+    <!-- Bootstrap js -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
+      <script>
+        $('.date-own').datepicker({
+         minViewMode: 2,
+         format: 'yyyy'
+       });
+      </script>
 </body>
 
 </html>

@@ -1,0 +1,16 @@
+body{
+    padding: 50px;
+}
+.date-own{
+    display: inline;
+    width: 80px;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+form{
+    max-width: 800px;
+}
