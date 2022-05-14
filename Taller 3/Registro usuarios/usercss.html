@@ -20,26 +20,28 @@
             <fieldset class="fieldset_registrobasico">
                 <div class="form_field">
                     <label for="username">Nombre de usuario: </label>
-                    <div class="username_container"><span>@</span><input type="text" name="username" id="username" required></div>
+                    <div class="username_container">
+                        <span>@</span>
+                        <input type="text" name="username" id="username" required minlength="3" maxlength="20"></div>
                 </div>
                 <div class="form_field">
                     <label for="password">Contraseña: </label>
-                    <input type="password" name="password" id="password" required>
+                    <input type="password" name="password" id="password" required minlength="8" maxlength="30">
                 </div>
             </fieldset>
             <fieldset class="fieldset_detalles">
                 <legend>Datos personales</legend>
                 <div class="form_field nombre">
                     <label for="nombre">Nombre: </label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre">    
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required maxlength="25">    
                 </div>
                 <div class="form_field apellido">
                     <label for="apellido">Apellido</label>
-                    <input type="text" id="apellido" name="apellido" placeholder="Ingresa tu apellido">
+                    <input type="text" id="apellido" name="apellido" placeholder="Ingresa tu apellido" required maxlength="25">
                 </div>
                 <div  class="form_field pais">
                     <label for="pais">Selecciona tu pais</label>
-                    <select name="pais" id="pais">
+                    <select name="pais" id="pais" required>
                         <option value="" selected disabled hidden>Selecciona</option>
                         <option value="1">Colombia</option>
                         <option value="2">Venezuela</option>
@@ -50,15 +52,15 @@
                 </div>
                 <div class="form_field direccion" >
                     <label for="direccion">Dirección:</label>
-                    <input type="text" name="direccion" id="direccion" placeholder="Ingresa tu dirección">
+                    <input type="text" name="direccion" id="direccion" placeholder="Ingresa tu dirección" required maxlength="45">
                 </div>
                 <div class="form_field email">
                     <label for="email">Email</label>
-                    <input type="text" name="email" id="email" placeholder="example@domain.com">
+                    <input type="email" name="email" id="email" placeholder="example@domain.com" required maxlength="120" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$">
                 </div>
                 <div class="form_field telefono">
                     <label for="telefono">Telefono</label>
-                    <input type="tel" id="telefono" name="telefono" placeholder="Ingresa tu celular">
+                    <input type="text" id="telefono" name="telefono" placeholder="Ingresa tu celular" required maxlength="20" pattern="[+]?[0-9]{9,14}">
                 </div>
             </fieldset>
             <div class="submit_container">
