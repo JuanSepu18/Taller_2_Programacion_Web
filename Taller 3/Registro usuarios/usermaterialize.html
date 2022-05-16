@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../materialize/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        #floating-volver{
+            position: fixed;
+            bottom: 0px;
+            left: 10px;
+        }
+        main{
+            margin-top: 50px;
+            margin-bottom: 100px;
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        fieldset{
+            width: 100%;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-color: aqua;
+        }
+        fieldset legend{
+            padding: 0px 5px;
+            font-weight: 200;
+        }
+    </style>
+    <title>usuario registro</title>
+</head>
+<body>
+    <main>
+        <a id="floating-volver" href="../index.html">volver</a>
+        <div class="row container">
+            <div class="col s12">
+                <h1 class="center-align">Registro usuario</h1>
+                <br>    
+            </div>
+        <form action="">
+            <div class="col s12 m6 l4 offset-m3">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="input_text" class="validate" placeholder="Ingresa un username"name="username" type="text" data-length="20" pattern="^.{3,20}" required>
+                        <label for="username">Username</label>
+                        <span class="helper-text" data-error="Ups!" data-success="Se ve bien">Máximo 20 caracteres</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">lock</i>
+                        <input id="contraseña" type="password" placeholder="Ingresa una contraseña" class="validate" pattern="^.{8,}$" required>
+                        <label for="contraseña">Contraseña</label>
+                        <span class="helper-text" data-error="Ups!" data-success="Se ve bien">La contraseña debe tener minimo 8 caracteres</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m10 l7 offset-m1 offset-l1">
+            <div class="row">
+                    <legend>Datos personales:</legend>
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <input placeholder="Ingresa tu nombre" id="nombre" type="text" class="validate" pattern="^[a-zA-Z]{1,25}$" required>
+                            <label for="nombre">Nombre</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <input placeholder="Ingresa tu apellido" id="apellido" type="text" class="validate" pattern="^[a-zA-Z]{1,25}$" required>
+                            <label for="apellido">Apellido</label>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m7">
+                                <i class="material-icons prefix">mail</i>
+                                <input id="email" type="email" placeholder="Ingresa tu email" class="validate" required>
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="input-field col s12 m5">
+                                <i class="material-icons prefix">phone</i>
+                                <input id="telefono" type="tel" class="validate" required>
+                                <label for="telefono">Telefono</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m6">
+                                <i class="material-icons prefix">flag</i>
+                                <select id="pais" class="validate" required>
+                                    <option value="" selected disabled hidden>Selecciona</option>
+                                    <option value="1">Colombia</option>
+                                    <option value="2">Venezuela</option>
+                                    <option value="3">México</option>
+                                    <option value="4">Ecuador</option>
+                                    <option value="4">Peru</option>
+                                </select>
+                                <label for="pais">Pais</label>
+
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <i class="material-icons prefix">home</i>
+                                <input id="direccion" type="text" placeholder="Ingresa tu dirección" class="validate" required>
+                                <label for="direccion">Direccion</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+            </div>
+            <div class="row hide-on-med-and-down">
+                <button class="btn waves-effect waves-light col s8 offset-s2" type="submit" name="action">Registrarme
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </div>
+
+            <div class="row hide-on-large-only">
+                <button class="btn waves-effect waves-light col s4 offset-s4" type="submit" name="action">Registrarme
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </form>
+        </div>
+    </main>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="../materialize/js/materialize.min.js"></script>
+    <script>
+          $(document).ready(function() {
+            $('input#input_text').characterCounter();
+            $('select').formSelect();
+        });
+                
+    </script>
+</body>
+</html>
