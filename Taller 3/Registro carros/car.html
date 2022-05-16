@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Carro</title>
+    <link rel="stylesheet" href="car.css">
+</head>
+<body>
+    <h1>REGISTRA AUTOS</h1>
+    <div id="inputs">
+        <br>
+        <div class="textoseleccion">
+        Nombre de Usuario <select name="id_user" id="user" class="Seleccioncajas">
+            <label for="user">Usuario</label>
+            <option selected disabled hidden>Selecciona...</option>
+            <option>Juanito Alimaña</option>
+            <option>María Márquez</option>
+            <option>Paula Uzcátegui</option>
+            <option>Juan Sepúlveda</option>
+            <option>Jathinson Meneses</option>
+        </select>
+        </div>
+        <br>
+        <div class="textoseleccion"> Tipo
+        <select name="id_tipocoche" id="tipocoche" class="Seleccioncajas">
+            <option selected disabled hidden>Selecciona...</option>
+            <option>Urbano</option>
+            <option>Subcompacto</option>
+            <option>Descapotable</option>
+            <option>Familiar</option>
+        </select>
+        Combustible
+        <select name="id_combustible" id="combustible" class="Seleccioncajas">
+            <option selected disabled hidden>Selecciona...</option>
+            <option>Gasolina</option>
+            <option>Diesel</option>
+            <option>ACPM</option>
+        </select>
+        </div>
+        <br>
+        <div class="textoseleccion"> Marca
+        <select name="id_marca" id="marca" class="Seleccioncajas">
+            <option selected disabled hidden>Selecciona...</option>
+            <option>Toyota</option>
+            <option>Nissan</option>
+            <option>Chevrolet</option>
+            <option>Kia</option>
+            <option>Renault</option>
+        </select>
+        Modelo <input type="text" name="modelo" id="modelo" class="Textocajas">
+        </div>
+        <br>
+        <div id="anio">Año <input type="number" name="anio" id="anio" class="Textocajas"> Caja <input type="text" name="caja" id="caja" class="Textocajas"></div>
+        <br>
+        <div id="motor">Motor <input type="text" name="motor" id="motor" class="Textocajas">
+            Estado
+            <select name="id_estado" id="estado" class="Seleccioncajas">
+                <option selected disabled hidden>Selecciona...</option>
+                <option>Usado</option>
+                <option>Nuevo</option>
+                <option>Restaurado</option>
+            </select>
+            </div>
+        <br>
+        <div>
+        Detalles <input type="text" name="detalles" id="detalles" required minlength="10" maxlength="50" class="Textocajas">
+        </div>
+        <br>
+        <div>
+            <select name="moneda" id="moneda" class="Seleccioncajas"> <option>Peso Colombiano</option><option>Peso mexicano</option><option>Dolar americano</option><option>Euro</option><option>Libras</option></select>
+            $ <input type="number" name="precio" id="precio" class="Textocajas">
+        </div>
+        <br>
+        <div>
+
+            Imagen 1 <input type="file" name="img1" id="img1"><br>
+            Imagen 2 <input type="file" name="img2" id="img2"><br>
+            Imagen 3 <input type="file" name="img3" id="img3">
+
+        </div>
+        <br>
+        <div id="botonesVolver">
+
+            <a href="../index.html"><input type="button" value="Registrar"></a> <a href="../index.html"><input type="button" value="Volver" id="botonVolver"></a>
+            <a href="car.html"><input type="button" value="Borrar"></a>
+        </div>
+    </div>
+
+</body>
+</html>

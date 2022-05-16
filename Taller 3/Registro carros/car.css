@@ -1,0 +1,46 @@
+body{
+
+    background-color: #FDFD96;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+h1{
+
+    
+    text-align: center;
+    padding-top: 5%;
+    
+}
+
+#inputs{
+
+    margin: 0 auto;
+    left: 36%;
+    background-color: #C7F1C2;
+    padding: 2%;
+    text-align: center;
+    width: fit-content;
+    height: fit-content;
+    justify-content: center;
+}
+
+#botonesVolver{
+
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+}
+
+.Seleccioncajas{
+
+    background-color: #EEEEEE;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+.Textocajas{
+
+    background-color: #EEEEEE;
+    font-family: 'Courier New', Courier, monospace;
+
+}
