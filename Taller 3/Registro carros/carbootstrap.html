@@ -6,13 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="carbootstrap.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="carbootstrap.css">
+    
     <title>Carros con Bootstrap</title>
 </head>
 <body>
     <div class="main">
-        <h1 class="row justify-content-md-center">Registra autos</h1>
+        <a class="btn-floating" href="../index.html">Volver</a>
+        <h1 class="row justify-content-md-center">• Registrar auto •</h1>
     <form class="row justify-content-md-center">
         <div class="container-fluid justify-content-md-center gy-3">
             <div>
@@ -75,64 +80,68 @@
                     </div>
                     <div class="input-group mb-3 col-sm">
                         <span class="input-group-text" id="modelo">Caja</span>
-                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="caja" required>
+                        <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="caja" pattern="[0-9]*" required>
                     </div>
                     <div class="input-group mb-3 col-sm">
                         <span class="input-group-text" id="modelo">Motor</span>
-                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="motor" required>
+                        <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="motor" required>
                     </div>
                 </div>
         </fieldset>
         <fieldset class="container">
             <div class="row gy-3">
-                <div class="row gy-3">
-                    <div class="col-x">
-                        <div class="form-floating">
-                            <select class="form-select" id="estado" aria-label="" required>
-                                <option selected disabled hidden>Selecciona</option>
-                                <option value="1">Usado</option>
-                                <option value="2">Nuevo</option>
-                                <option value="3">Restaurado</option>
-                            </select>
-                            <label for="estado">Estado</label>
-                        </div>
-                    </div>
-                    <div class="col-x">
-                        <div class="form-floating">
-                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-                            <label for="floatingTextarea2">Detalles</label>
-                        </div>
+                <div class="col-x">
+                    <div class="form-floating">
+                        <select class="form-select" id="estado" aria-label="" required>
+                            <option selected disabled hidden>Selecciona...</option>
+                            <option value="1">Usado</option>
+                            <option value="2">Nuevo</option>
+                            <option value="3">Restaurado</option>
+                        </select>
+                        <label for="estado">Estado</label>
                     </div>
                 </div>
-                <div class="row gy-3">
-                    <div class="input-group mb-3 container-fluid">
-                        <div class="form-floating col-sm-6">
-                            <select type="text" class="form-control" id="moneda" placeholder="Moneda" aria-label="Moneda">
-                                <option value="1">Peso colombiano</option>
-                                <option value="2">Peso mexicano</option>
-                                <option value="3">Dolar americano</option>
-                                <option value="4">Euros</option>
-                                <option value="5">Libras</option>
-                            </select>
-                            <label for="moneda">Moneda</label>
-                        </div>
-                        <span class="input-group-text">$</span>
-                        <input type="number" class="form-control col-sm-6" placeholder="0" aria-label="Precio">
+                <div class="col-x">
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                        <label for="floatingTextarea2">Detalles</label>
                     </div>
+                </div>
+                <div class="input-group mb-3 gy-3">
+                    <div class="form-floating col-sm-6">
+                        <select type="text" class="form-control" id="moneda" placeholder="Moneda" aria-label="Moneda">
+                            <option value="1">Peso colombiano</option>
+                            <option value="2">Peso mexicano</option>
+                            <option value="3">Dolar americano</option>
+                            <option value="4">Euros</option>
+                            <option value="5">Libras</option>
+                        </select>
+                        <label for="moneda">Moneda</label>
+                    </div>
+                    <span class="input-group-text">$</span>
+                    <input type="number" class="form-control col-sm-6" placeholder="0" aria-label="Precio">
                 </div>
             </div>
             <div class="row">
-                <div class="mb-3 col-sm-4">
-                    <label for="formFile" class="form-label">Imagen 1</label>
-                    <input class="form-control" type="file" id="formFile">
+                <div class="mb-3 col-sm-6">
+                    <label for="imagen1" class="form-label">Imagen 1</label>
+                    <input class="form-control" type="file" id="imagen1">
                 </div>
-                <div class="mb-3 col-sm-4">
-                    <label for="formFile" class="form-label">Imagen 2</label>
-                    <input class="form-control" type="file" id="formFile">
+                <div class="mb-3">
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Descripcion del carro" id="descripcion" style="height: 100px"></textarea>
+                        <label for="descripcion">Descripcion 1</label>
+                    </div>
                 </div>
-                <div class="mb-3 col-sm-4">
-                    <label for="formFile" class="form-label">Imagen 3</label>
-                    <input class="form-control" type="file" id="formFile">
+                <div class="mb-3 col-sm-6">
+                    <label for="imagen2" class="form-label">Imagen 2</label>
+                    <input class="form-control" type="file" id="imagen2">
+                </div>
+                <div class="mb-3">
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Descripcion del carro" id="descripcion2" style="height: 100px"></textarea>
+                        <label for="descripcion2">Descripcion 2</label>
+                    </div>
                 </div>
             </div>
         </fieldset>
