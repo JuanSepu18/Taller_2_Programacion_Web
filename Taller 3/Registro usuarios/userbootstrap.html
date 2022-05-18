@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Usuario Bootstrap</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="userbootstrap.css">
+</head>
+  <body>
+    <div class="mx-auto" id="titulo">
+        <br>
+        <h1>REGISTRO USUARIOS</h1>
+
+    </div>
+    <br>
+
+    <div id="cajainputs" class="rounded-bottom">
+    <div class="container-fluid" class="mx-auto">
+        <h4>DATOS DE INGRESO</h4>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="username">@</span>
+            </div>
+            <input type="text" class="form-control" placeholder="Nombre de usuario" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+
+            <div class="input-group mb-3">  
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="contraseña">Contraseña</span>
+                </div>
+                <input type="password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+              </div>
+    </div>
+    </div>
+    <br>
+    <div id="cajadatos" class="border border-dark">
+        <h4>DATOS DE USUARIO</h4>
+        <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="nombreyapellidos">Nombre y apellidos</span>
+            </div>
+            <input type="text" class="form-control">
+            <input type="text" class="form-control">
+          </div>
+          <br>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="pais">País</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect01">
+              <option selected>Choose...</option>
+              <option value="1">Colombia</option>
+              <option value="2">Venezuela</option>
+              <option value="3">México</option>
+              <option value="3">Ecuador</option>
+              <option value="3">Perú</option>
+            </select>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="telefono">Teléfono</span>
+            </div>
+            <input type="number" class="form-control" aria-label="telefono" aria-describedby="inputGroup-sizing-default">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="direccion">Dirección</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Direccion" aria-describedby="inputGroup-sizing-default" placeholder="Be as specific as possible">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="email">Email</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Direccion" aria-describedby="inputGroup-sizing-default" placeholder="example@domain.com">
+          </div>
+    </div>
+    <br>
+    <div id="botones">
+        <a href="../index.html"><button type="button" class="btn btn-primary btn-lg" id="botonregistro">Registrarme</button></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <a href="userbootstrap.html"><button type="button" class="btn btn-primary btn-lg" id="botonborrar">Borrar</button></a>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

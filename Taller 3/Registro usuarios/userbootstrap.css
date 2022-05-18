@@ -1,0 +1,62 @@
+body{
+
+    background-color: #99c8ee;
+
+}
+h1,h4{
+
+    color:black;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+}
+#titulo{
+
+    text-align: center;
+
+}
+
+#cajainputs{
+
+    width: 60%;
+    margin: 0 auto;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    background-color: #FFFED1;
+    padding-top: 1%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 4%;
+}
+
+#cajadatos{
+    background-color: #FFFED1;
+    width: 60%;
+    margin:0 auto;
+    padding-top: 1%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 4%;
+
+}
+
+#botones{
+    width: 60%;
+    margin:0 auto;
+    text-align: center;
+}
+
+#botonregistro{
+
+    background-color: #FFFED1;
+    color: black;
+
+}
+
+#botonborrar{
+
+    background-color: #FFFED1;
+    color: black;
+
+
+}
