@@ -12,6 +12,9 @@
             bottom: 0px;
             left: 10px;
         }
+        body{
+            background-color: ghostwhite;
+        }
         main{
             margin-top: 50px;
             margin-bottom: 100px;
@@ -33,6 +36,10 @@
             padding: 0px 5px;
             font-weight: 200;
         }
+        .form-container{
+            max-width: 800px;
+            margin: 0 auto;
+        }
     </style>
     <title>usuario registro</title>
 </head>
@@ -41,12 +48,12 @@
         <a id="floating-volver" href="../index.html">volver</a>
         <div class="row container">
             <div class="col s12">
-                <h1 class="center-align">Registro usuario</h1>
+                <h3 class="center-align">Registro de usuario</h3>
                 <br>    
             </div>
-        <form action="">
-            <div class="col s12 m6 l4 offset-m3">
-                <div class="row">
+        <form action="" class="form-container">
+            <div class="row s12 m12 l12">
+                <div class="col s12 m6">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">account_circle</i>
                         <input id="input_text" class="validate" placeholder="Ingresa un username"name="username" type="text" data-length="20" pattern="^.{3,20}" required>
@@ -54,7 +61,7 @@
                         <span class="helper-text" data-error="Ups!" data-success="Se ve bien">Máximo 20 caracteres</span>
                     </div>
                 </div>
-                <div class="row">
+                <div class="col s12 m6">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">lock</i>
                         <input id="contraseña" type="password" placeholder="Ingresa una contraseña" class="validate" pattern="^.{8,}$" required>
@@ -63,7 +70,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col s12 m10 l7 offset-m1 offset-l1">
+            <div class="col s12 m10 offset-m1 datospersonales">
             <div class="row">
                     <legend>Datos personales:</legend>
                     <div class="row">
@@ -110,18 +117,12 @@
                     </div>
                     
             </div>
-            <div class="row hide-on-med-and-down">
-                <button class="btn waves-effect waves-light col s8 offset-s2" type="submit" name="action">Registrarme
+            <div class="row">
+                <button class="btn waves-effect waves-light col s8 m4 offset-s2 offset-m4" type="submit" name="action">Registrarme
                     <i class="material-icons right">send</i>
                 </button>
             </div>
         </div>
-
-            <div class="row hide-on-large-only">
-                <button class="btn waves-effect waves-light col s4 offset-s4" type="submit" name="action">Registrarme
-                    <i class="material-icons right">send</i>
-                </button>
-            </div>
         </form>
         </div>
     </main>
