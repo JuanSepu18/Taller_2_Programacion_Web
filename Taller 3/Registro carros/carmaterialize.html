@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../materialize/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>usuario registro</title>
+</head>
+  <body>
+    <header>
+      <nav class="cyan">
+        <div class="nav-wrapper">
+          <div class="container">
+            <span class="brand-logo"><h5>REGISTRO CARROS</h5></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+      <main>
+        
+        <div class="row">
+            <div class="col s2"></div>
+            <div class="col s8" id="hola">
+                <br>
+                <div class="input-field col s12">
+                    <select>
+                      <option value="" disabled selected>Selecciona...</option>
+                      <option value="1">Juanito Alimaña</option>
+                      <option value="2">María Márquez</option>
+                      <option value="3">Paula Uzcátegui</option>
+                      <option value="4">Jathinson Meneses</option>
+                    </select>
+                    <label>Nombre de usuario</label>
+                </div>
+                  <br>
+                  <div class="row">
+
+                    <div class="col s6">
+
+                        <div class="input-field col s12 m10">
+                            <i class="material-icons prefix">directions_car</i>
+                            <select id="tipocarro" class="validate" required>
+                                <option value="" selected disabled hidden>Selecciona</option>
+                                <option value="1">Urbano</option>
+                                <option value="2">Subcompacto</option>
+                                <option value="3">Descapotable</option>
+                                <option value="4">Familiar</option>
+                            </select>
+                            <label for="tipocarro">Tipo de carro</label>
+                        </div>
+
+                        <div class="input-field col s12 m10">
+                            <i class="material-icons prefix">flag</i>
+                            <select id="marca" class="validate" required>
+                                <option value="" selected disabled hidden>Selecciona</option>
+                                <option value="1">Toyota</option>
+                                <option value="2">Nissan</option>
+                                <option value="3">Chevrolet</option>
+                                <option value="4">Kia</option>
+                                <option value="5">Renault</option>
+                            </select>
+                            <label for="marca">Marca</label>
+                        </div>
+
+                        <form class="col s12">
+                            <div class="row">
+                              <div class="input-field col s6 m10">
+                                <i class="material-icons prefix">date_range</i>
+                                <input placeholder="Digite el año" id="año" type="number" class="validate">
+                                <label for="año">Año</label>
+                              </div>
+                        </div>
+                        </form>
+
+                        <form class="col s12">
+                            <div class="row">
+                              <div class="input-field col s6 m10">
+                                <i class="material-icons prefix">toys</i>
+                                <input placeholder="Estado del motor" id="caja" type="text" class="validate">
+                                <label for="año">Motor</label>
+                              </div>
+                        </div>
+                        </form>
+
+                    </div>
+
+
+
+
+
+                    <div class="col s6">
+
+                        <div class="input-field col s12 m10">
+                            <i class="material-icons prefix">local_gas_station</i>
+                            <select id="combustible" class="validate" required>
+                                <option value="" selected disabled hidden>Selecciona</option>
+                                <option value="1">Gasolina</option>
+                                <option value="2">Diesel</option>
+                                <option value="3">ACPM</option>
+                            </select>
+                            <label for="combustible">Combustible</label>
+
+                        </div>
+                        <form class="col s12">
+                            <div class="row">
+                              <div class="input-field col s6 m10">
+                                <i class="material-icons prefix">build</i>
+                                <input placeholder="Digite el modelo" id="modelo" type="text" class="validate">
+                                <label for="modelo">Modelo</label>
+                              </div>
+                            
+                            <form class="col s12">
+                                <div class="row">
+                                  <div class="input-field col s6 m10">
+                                    <i class="material-icons prefix">toys</i>
+                                    <input placeholder="Digite el estado de la caja" id="caja" type="text" class="validate">
+                                    <label for="caja">Caja</label>
+                                  </div>
+                            </div>
+
+                            <div class="input-field col s12 m10">
+                                <i class="material-icons prefix">sentiment_very_satisfied                                </i>
+                                <select id="estado" class="validate" required>
+                                    <option value="" selected disabled hidden>Selecciona</option>
+                                    <option value="1">Usado</option>
+                                    <option value="2">Nuevo</option>
+                                    <option value="3">Restaurado</option>
+                                </select>
+                                <label for="estado">Estado</label>
+    
+                            </div>
+
+                        </div>
+                  </div>
+                
+                  <form class="col s12">
+                    <div class="row">
+                      <div class="input-field col s8 m12">
+                        <i class="material-icons prefix">mode_edit</i>
+                        <input placeholder="Describa el estado del vehículo" id="estado" type="text" class="validate">
+                        <label for="estado">Detalles</label>
+                      </div>
+                    </div>
+                </form>
+            </div>
+            <div class="input-field col s4">
+                <select>
+                  <option value="1">Peso Colombiano</option>
+                  <option value="2">Peso Mexicano</option>
+                  <option value="3">Dólar Americano</option>
+                  <option value="4">Euro</option>
+                  <option value="5">Libras</option>
+                </select>
+                <label>Moneda</label>
+              </div>
+              <form class="col s8">
+                <div class="row">
+                  <div class="input-field col s8 m12">
+                    <i class="material-icons prefix">attach_money</i>
+                    <input placeholder="Precio del vehículo" id="precio" type="number" class="validate">
+                    <label for="precio">Precio</label>
+                  </div>
+                </div>
+            </form>
+
+            <form action="#">
+                <div class="file-field input-field">
+                  <div class="btn">
+                    <span>Imagen 1</span>
+                    <input type="file" multiple>
+                  </div>
+                  <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" placeholder="Suba la imagen 1">
+                  </div>
+                </div>
+              </form>
+
+              <form action="#">
+                <div class="file-field input-field">
+                  <div class="btn">
+                    <span>Imagen 2</span>
+                    <input type="file" multiple>
+                  </div>
+                  <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" placeholder="Suba la imagen 2">
+                  </div>
+                </div>
+              </form>
+
+              <form action="#">
+                <div class="file-field input-field">
+                  <div class="btn">
+                    <span>Imagen 3</span>
+                    <input type="file" multiple>
+                  </div>
+                  <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" placeholder="Suba la imagen 3">
+                  </div>
+                </div>
+              </form>
+
+
+
+              <div class="row">
+              <div class="col s8">
+              <a href="../index.html"><button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+                <i class="material-icons right">send</i>
+              </button></a>
+              <a href="carmaterialize.html"><button class="btn waves-effect waves-light" type="borrar" name="action">Borrar
+                <i class="material-icons right">clear</i>
+              </button></a>
+              <a href="../index.html"><button class="btn waves-effect waves-light" type="volver" name="action">Volver
+                <i class="material-icons right">chevron_left</i>
+              </button>
+              </a>
+                </div>
+              </div>
+              <div class="col s1">
+
+
+
+              </div>
+              <div class="col s4">
+
+                
+              </div>
+
+
+        <div class="col s2"></div>
+          </div>
+
+    </main>
+    <footer class="page-footer cyan">
+      <div class="footer-copyright">
+        <div class="container">
+          © 2022 Creado usando Materialize por Paula Uzcátegui y Juan Sepúlveda
+        </div>
+      </div>
+    </footer>
+    <!-- jQuery CDN -->
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!-- Materialize JS CDN -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+      <script src="../materialize/js/materialize.min.js"></script>
+    <script>
+      $("document").ready(function(){
+        $(".button-collapse").sideNav();
+      });
+
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('select').formSelect();
+  });
+        
+    </script>
+  </body>
+</html>
