@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User css</title>
+    <link rel="stylesheet" href="usercss.css">
+    <script type="text/javascript" src="javascript.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <main>
+        <div class="volver">
+            <a href="../index.html">Volver</a>
+        </div>
+        <h1>• Registrate •</h1>
+        <form action="" method="post">
+            <fieldset class="fieldset_registrobasico">
+                <div class="form_field">
+                    <label for="username">Nombre de usuario: </label>
+                    <div class="username_container">
+                        <span>@</span>
+                        <input type="text" name="username" id="username" required minlength="3" maxlength="20"></div>
+                </div>
+                <div class="form_field">
+                    <label for="password">Contraseña: </label>
+                    <input type="password" name="password" id="password" required minlength="8" maxlength="30">
+                </div>
+            </fieldset>
+            <fieldset class="fieldset_detalles">
+                <legend>Datos personales</legend>
+                <div class="form_field nombre">
+                    <label for="nombre">Nombre: </label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required maxlength="25">    
+                </div>
+                <div class="form_field apellido">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" id="apellido" name="apellido" placeholder="Ingresa tu apellido" required maxlength="25">
+                </div>
+                <div  class="form_field pais">
+                    <label for="pais">Selecciona tu pais</label>
+                    <select name="pais" id="pais" required>
+                        <option value="" selected disabled hidden>Selecciona</option>
+                        <option value="1">Colombia</option>
+                        <option value="2">Venezuela</option>
+                        <option value="3">México</option>
+                        <option value="4">Ecuador</option>
+                        <option value="4">Peru</option>
+                    </select>
+                </div>
+                <div class="form_field direccion" >
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" name="direccion" id="direccion" placeholder="Ingresa tu dirección" required maxlength="45">
+                </div>
+                <div class="form_field email">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="example@domain.com" required maxlength="120" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$">
+                </div>
+                <div class="form_field telefono">
+                    <label for="telefono">Telefono</label>
+                    <input type="text" id="telefono" name="telefono" placeholder="Ingresa tu celular" required maxlength="20" pattern="[+]?[0-9]{9,14}">
+                </div>
+                <div class="form_field_gustosboton">
+                    <label for="gustosboton"><b>Habilitar gustos</b></label>
+                    &nbsp
+                    <input type="radio" id="gustos" name="Gustos">
+                </div>
+                </div>
+            </fieldset>
+            <fieldset class="fieldset_Secciongustos">
+                <legend>Gustos</legend>
+                <div  class="form_field color">
+                    <label for="color">Selecciona tu color favorito</label>
+                    <select name="color" id="color" required>
+                        <option value="" selected disabled hidden>Selecciona</option>
+                        <option value="1">Rojo</option>
+                        <option value="2">Amarillo</option>
+                        <option value="3">Azul</option>
+                        <option value="4">Verde</option>
+                        <option value="5">Rosado</option>
+                        <option value="6">Magenta</option>
+                        <option value="7">Blanco</option>
+                        <option value="8">Otro</option>
+                    </select>
+                </div>
+                <div  class="form_field marca">
+                    <label for="marca">Selecciona tu marca de vehículo favorita</label>
+                    <select name="marca" id="marca" required>
+                        <option value="" selected disabled hidden>Selecciona</option>
+                        <option value="1">Nissan</option>
+                        <option value="2">Ford</option>
+                        <option value="3">Chevrolet</option>
+                        <option value="4">Toyota</option>
+                        <option value="5">Renault</option>
+                        <option value="6">Volkswagen</option>
+                        <option value="7">Otra</option>
+                    </select>
+                </div>
+                <div  class="form_field estilo">
+                    <label for="estilo">Selecciona tu estilo de vehículo favorito</label>
+                    <select name="estilo" id="estilo" required>
+                        <option value="" selected disabled hidden>Selecciona</option>
+                        <option value="1">Sedán</option>
+                        <option value="2">Hatchback</option>
+                        <option value="3">SUV</option>
+                        <option value="4">Deportivo</option>
+                        <option value="5">Van</option>
+                        <option value="6">Camioneta</option>
+                        <option value="7">Otro</option>
+                    </select>
+                </div>
+
+                <div class="form_field modelo" >
+                    <label for="modelo">Modelo de vehículo favorito:</label>
+                    <input type="text" name="modelo" id="modelo" placeholder="Ingresa tu modelo de vehículo preferido" required maxlength="45">
+                </div>
+
+                <div class="range_container">
+                    <section class="range-slider">
+                        <span class="rangeValues"></span>
+                        <input value="0" min="0" max="100000000" step="1000000" type="range">
+                        <input value="100000000" min="0" max="100000000" step="1000000" type="range">
+                      </section>
+                    </div>
+                </div>
+            </div>
+
+            </fieldset>
+            <div class="submit_container">
+            <input type="submit" class="boton envio" value="Registrarme">
+            </div>
+        </form>
+    </main>
+</body>
+</html>
