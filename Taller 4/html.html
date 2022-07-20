@@ -36,10 +36,12 @@
                 <div class="form_field nombre">
                     <label for="nombre">Nombre: </label>
                     <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required maxlength="25">    
+                    <label id="error1">Máximo 25 caracteres</label>
                 </div>
                 <div class="form_field apellido">
                     <label for="apellido">Apellido</label>
                     <input type="text" id="apellido" name="apellido" placeholder="Ingresa tu apellido" required maxlength="25">
+                    <label id="error2">Máximo 25 caracteres</label>
                 </div>
                 <div  class="form_field pais">
                     <label for="pais">Selecciona tu pais</label>
@@ -55,6 +57,7 @@
                 <div class="form_field direccion" >
                     <label for="direccion">Dirección:</label>
                     <input type="text" name="direccion" id="direccion" placeholder="Ingresa tu dirección" required maxlength="45">
+                    <label id="error3">Debe iniciar con cll, cra, av, anv o trans</label>
                 </div>
                 <div class="form_field email">
                     <label for="email">Email</label>
@@ -67,15 +70,16 @@
                 <div class="form_field_gustosboton">
                     <label for="gustosboton"><b>Habilitar gustos</b></label>
                     &nbsp
-                    <input type="radio" id="gustos" name="Gustos">
+                    <input type="checkbox" id="gustos" name="Gustos" onchange="show_gustos()">
                 </div>
                 </div>
             </fieldset>
-            <fieldset class="fieldset_Secciongustos">
+            <div id="gustosseccion">
+            <fieldset class="fieldset_Secciongustos" id="secciongustos">
                 <legend>Gustos</legend>
                 <div  class="form_field color">
                     <label for="color">Selecciona tu color favorito</label>
-                    <select name="color" id="color" required>
+                    <select name="color" id="color">
                         <option value="" selected disabled hidden>Selecciona</option>
                         <option value="1">Rojo</option>
                         <option value="2">Amarillo</option>
@@ -89,7 +93,7 @@
                 </div>
                 <div  class="form_field marca">
                     <label for="marca">Selecciona tu marca de vehículo favorita</label>
-                    <select name="marca" id="marca" required>
+                    <select name="marca" id="marca">
                         <option value="" selected disabled hidden>Selecciona</option>
                         <option value="1">Nissan</option>
                         <option value="2">Ford</option>
@@ -102,7 +106,7 @@
                 </div>
                 <div  class="form_field estilo">
                     <label for="estilo">Selecciona tu estilo de vehículo favorito</label>
-                    <select name="estilo" id="estilo" required>
+                    <select name="estilo" id="estilo">
                         <option value="" selected disabled hidden>Selecciona</option>
                         <option value="1">Sedán</option>
                         <option value="2">Hatchback</option>
@@ -116,10 +120,11 @@
 
                 <div class="form_field modelo" >
                     <label for="modelo">Modelo de vehículo favorito:</label>
-                    <input type="text" name="modelo" id="modelo" placeholder="Ingresa tu modelo de vehículo preferido" required maxlength="45">
+                    <input type="text" name="modelo" id="modelo" placeholder="Ingresa tu modelo de vehículo preferido" maxlength="45">
                 </div>
 
                 <div class="range_container">
+                    <label for="range-slider"><b>Rango de precios: </b></label>
                     <section class="range-slider">
                         <span class="rangeValues"></span>
                         <input value="0" min="0" max="100000000" step="1000000" type="range">
@@ -128,10 +133,11 @@
                     </div>
                 </div>
             </div>
+        </div>
 
             </fieldset>
             <div class="submit_container">
-            <input type="submit" class="boton envio" value="Registrarme">
+            <input type="submit" class="boton envio" value="Registrarme" onclick="comprobacion()">
             </div>
         </form>
     </main>

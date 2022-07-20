@@ -1,3 +1,42 @@
+function show_gustos(){
+  botongustos = document.getElementById("gustos");
+
+  if((botongustos.checked)){
+    document.getElementById("gustosseccion").style.display = 'block';
+  }else{
+    document.getElementById("gustosseccion").style.display = 'none';
+  }
+}
+
+function comprobacion(){
+
+  nombre = document.getElementById("nombre");
+  apellido = document.getElementById("apellido");
+  direccion = document.getElementById("direccion");
+  var valordireccion = direccion.value; 
+  if(nombre.value.length>25){
+
+    document.getElementById("error1").style.visibility = 'visible';
+
+  }
+
+  if(apellido.value.length>25){
+
+    document.getElementById("error2").style.visibility = 'visible';
+
+  }
+
+  if(valordireccion.startsWith("cll")||valordireccion.startsWith("cra")||valordireccion.startsWith("av")||valordireccion.startsWith("anv")||valordireccion.startsWith("trans")){
+
+
+
+  } else{
+
+    document.getElementById("error3").style.visibility = 'visible';
+
+  }
+}
+
 function getVals(){
     // Get slider values
     var parent = this.parentNode;
@@ -25,6 +64,3 @@ function getVals(){
           }
         }
   }
-
-
-  if 
