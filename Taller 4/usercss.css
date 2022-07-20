@@ -54,8 +54,14 @@ fieldset legend{
 .form_field{
     display: flex;
     flex-direction: column;
-    margin: 8px 0px 8px 0px;
+    height: Calc(54px + 18px + 2px);
+    overflow: hidden;
 }
+
+.form_field-password{
+    height: fit-content
+}
+
 
 .form_field input, select{
     height: 30px;
@@ -102,36 +108,27 @@ fieldset legend{
 
 }
 
-#error1{
-
-    z-index: 2;
-    font-size: 15px;
-    color:red;
+.error{
+    font-size: 12px;
+    padding-left: 12px;
     padding: 0%;
     margin:0%;
-    visibility:hidden;
+    z-index: 2;
+
+    color: red;
+    display: none;
 }
 
-#error2{
-
-    z-index: 2;
-    font-size: 15px;
-    color:red;
-    padding: 0%;
-    margin:0%;
-    visibility:hidden;
-
+.showError{
+    display: inline-block;
 }
 
-#error3{
-    z-index: 2;
-    font-size: 15px;
-    color:red;
-    padding: 0%;
-    margin:0%;
-    visibility:hidden;
+.passwordValidationsContainer{
+    display: none;
+}
 
-
+.passwordValidation{
+    font-size: 14px;
 }
 
 .boton{

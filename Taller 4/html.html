@@ -18,30 +18,49 @@
             <a href="../index.html">Volver</a>
         </div>
         <h1>• Registrate •</h1>
-        <form action="" method="post">
+        <form action="" method="post" novalidate onsubmit="sendForm(event)">
             <fieldset class="fieldset_registrobasico">
-                <div class="form_field">
+                <div class="form_field required">
                     <label for="username">Nombre de usuario: </label>
                     <div class="username_container">
                         <span>@</span>
-                        <input type="text" name="username" id="username" required minlength="3" maxlength="20"></div>
+                        <input type="text" name="username" id="username" onkeyup = "checkUser()" required minlength="10" maxlength="20"></div>
+                        <span class="error error_required" id="usernameRequired">Este campo es requerido</span>
+                        <span class="error" id="usernameSpecialChar">Los caracteres especiales no estan permitidos</span>
+                        <span class="error" id="usernameMin">Mínimo 10 caracteres</span>
+                        <span class="error" id="usernameMax">Máximo 20 caracteres</span>
                 </div>
-                <div class="form_field">
+                <div class="form_field form_field-password required">
                     <label for="password">Contraseña: </label>
-                    <input type="password" name="password" id="password" required minlength="8" maxlength="30">
+                    <input type="password" name="password" id="password" required onfocus="showPasswordValidation()" onkeyup="checkPassword()">
+                    <span class="error error_required" id="passwordRequired">Este campo es requerido</span>
+                    <div class = "passwordValidationsContainer">
+                        <span class = "passwordValidation" id="passwordMax">❌ Contiene entre 15 y 20 caracteres</span>
+                        <span class = "passwordValidation" id="passwordUppercase">❌ Contiene mayúsculas</span>
+                        <span class = "passwordValidation" id="passwordNumbers">❌ Contiene números</span>
+                        <span class = "passwordValidation" id="passwordSpecialChar">❌ Contiene #,%,/,&</span>
+                    </div>
+                </div>
+                <div class="form_field required">
+                    <label for="confirm_password">Confirmar contraseña: </label>
+                    <input type ="password" id="confirm_password" required minlength="15" onkeyup="checkConfirmation()">
+                    <span class="error" id="confirm_passwordError">Las contraseñas no coinciden</span>
+                    <span class="error error_required" id="confirm_passwordRequired">Este campo es requerido</span>
                 </div>
             </fieldset>
             <fieldset class="fieldset_detalles">
                 <legend>Datos personales</legend>
-                <div class="form_field nombre">
+                <div class="form_field nombre required">
                     <label for="nombre">Nombre: </label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required maxlength="25">    
-                    <label id="error1">Máximo 25 caracteres</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>    
+                    <span id="error1" class="error">Máximo 25 caracteres</span>
+                    <span class="error error_required" id="nameRequired">Este campo es requerido</span>
                 </div>
-                <div class="form_field apellido">
+                <div class="form_field apellido required">
                     <label for="apellido">Apellido</label>
-                    <input type="text" id="apellido" name="apellido" placeholder="Ingresa tu apellido" required maxlength="25">
-                    <label id="error2">Máximo 25 caracteres</label>
+                    <input type="text" id="apellido" name="apellido" placeholder="Ingresa tu apellido" required>
+                    <span id="error2" class="error">Máximo 25 caracteres</span>
+                    <span class="error error_required" id="lastnameRequired">Este campo es requerido</span>
                 </div>
                 <div  class="form_field pais">
                     <label for="pais">Selecciona tu pais</label>
@@ -57,11 +76,14 @@
                 <div class="form_field direccion" >
                     <label for="direccion">Dirección:</label>
                     <input type="text" name="direccion" id="direccion" placeholder="Ingresa tu dirección" required maxlength="45">
-                    <label id="error3">Debe iniciar con cll, cra, av, anv o trans</label>
+                    <span id="error3" class="error" >Debe iniciar con cll, cra, av, anv o trans</span>
                 </div>
-                <div class="form_field email">
+                <div class="form_field email required">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="example@domain.com" required maxlength="120" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$">
+                    <input type="email" name="email" id="email" placeholder="example@domain.com" required onkeyup="checkEmail()" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$">
+                    <span class="error" id="emailMax">Máximo 120 caracteres</span>
+                    <span class="error" id="emailValido">Email no válido debe seguir "example@domain.com"</span>
+                    <span class="error error_required" id="emailRequired">Este campo es requerido</span>
                 </div>
                 <div class="form_field telefono">
                     <label for="telefono">Telefono</label>
@@ -137,7 +159,7 @@
 
             </fieldset>
             <div class="submit_container">
-            <input type="submit" class="boton envio" value="Registrarme" onclick="comprobacion()">
+            <input type="submit" class="boton envio" value="Registrarme">
             </div>
         </form>
     </main>

@@ -8,6 +8,110 @@ function show_gustos(){
   }
 }
 
+// Mostrar el cuadro de validaciones de la contraseña
+function showPasswordValidation(){
+  document.getElementsByClassName("passwordValidationsContainer")[0].style.display= 'contents';
+}
+
+// Validaciones del campo username
+function checkUser(){
+  let field =  document.getElementById("username");
+  validateField(field, document.getElementById("usernameSpecialChar"), /^\w*$/);
+  validateField(field, document.getElementById("usernameMax"),/^.{0,20}$/);
+  validateField(field, document.getElementById("usernameMin"),/^.{10,}$/);
+  validateField(field, field.querySelector(".error_required"), /^.+/g);
+}
+
+// Validaciones del campo password
+function checkPassword(){
+  validatePassword(document.getElementById("passwordMax"),/^.{15,20}$/);
+  validatePassword(document.getElementById("passwordUppercase"),/[A-Z]+/g);
+  validatePassword(document.getElementById("passwordNumbers"),/[0-9]+/g);
+  validatePassword(document.getElementById("passwordSpecialChar"),/[#%\/&]+/g);
+  validateField(document.getElementById("password"), document.getElementById("passwordRequired"), /^.+/g);
+  checkConfirmation()
+}
+
+function checkEmail(){
+  validateField(document.getElementById("email"),document.getElementById("emailMax"), /^.{0,120}$/ );
+  validateField(document.getElementById("email"), document.getElementById("emailValido"),/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$/);
+  validateField(document.getElementById("email"), document.getElementById("emailRequired"), /^.+/g);
+}
+
+function checkConfirmation(){
+// Valida que la contraseña este validada
+  if(Array.from(
+    document.getElementsByClassName("passwordValidation"))
+    .filter(validation => validation.innerText.includes('❌')).length === 0
+    && document.getElementById("confirm_password").value != ''){
+    if(document.getElementById("confirm_password").value != document.getElementById("password").value){
+        document.getElementById("confirm_passwordError").classList.add("showError");
+      }
+      else{
+        document.getElementById("confirm_passwordError").classList.remove("showError");
+      }
+  }
+  validateField(document.getElementById("confirm_password"), document.getElementById("confirm_passwordRequired"), /^.+/g);
+}
+
+/**
+ * Validar campo de contraseña. Campiar x por chulito si es valido
+ * error - elemento span del error
+ * regex - exprecion regular que debería seguir el campo
+ * La clase showError sirve como bandera para validar errores al mandar el formulario
+ */
+function validatePassword(error, regex) {
+  if(!regex.test(document.getElementById("password").value)){
+    error.innerText = error.innerText.replace('✅', '❌');
+    error.classList.add("showError");
+  }
+  else{
+    error.innerText = error.innerText.replace('❌', '✅');
+    error.classList.remove("showError");
+  }
+}
+
+/**
+ * Validar campos
+ * element - elemento que se quiere validar
+ * error - elemento span del error
+ * regex - exprecion regular que debería seguir el campo
+ */
+function validateField(element, error, regex) {
+  if(!regex.test(element.value)){
+    error.classList.add("showError");
+  }
+  else{
+    error.classList.remove("showError");
+  }
+}
+
+
+// Enviar formulario haciendo las validaciones correspondientes
+function sendForm(e){
+  e.preventDefault(); // para que no se envie solo
+  comprobacion();
+
+  // Comprobar que los campos requeridos esten llenos
+  document.querySelectorAll(".required").forEach(requiredField => {
+    validateField(requiredField.querySelector("input"), requiredField.querySelector(".error_required"), /.+/g);
+  });
+
+  let validacionFailed = false;
+  document.querySelectorAll(".form_field").forEach(formField => {
+    if(formField.querySelectorAll(".showError").length > 0){
+      validacionFailed = true;
+    }
+  });
+  if(validacionFailed){
+    alert("Errores en el formulario");
+  }
+  else{
+    alert("💫​ Mandando formulario... 💫​");
+  }
+
+}
+
 function comprobacion(){
 
   nombre = document.getElementById("nombre");
@@ -15,25 +119,24 @@ function comprobacion(){
   direccion = document.getElementById("direccion");
   var valordireccion = direccion.value; 
   if(nombre.value.length>25){
-
-    document.getElementById("error1").style.visibility = 'visible';
-
+    document.getElementById("error1").classList.add("showError");
+  }
+  else{
+    document.getElementById("error1").classList.remove("showError");
   }
 
   if(apellido.value.length>25){
-
-    document.getElementById("error2").style.visibility = 'visible';
-
+    document.getElementById("error2").classList.add("showError");
+  }
+  else{
+    document.getElementById("error2").classList.remove("showError");
   }
 
-  if(valordireccion.startsWith("cll")||valordireccion.startsWith("cra")||valordireccion.startsWith("av")||valordireccion.startsWith("anv")||valordireccion.startsWith("trans")){
-
-
-
-  } else{
-
-    document.getElementById("error3").style.visibility = 'visible';
-
+  if(!/^cll|Cll|cra|Cra|Av|av|Anv|anv|Trans|trans/g.test(valordireccion)){
+    document.getElementById("error3").classList.add("showError");
+  }
+  else{
+    document.getElementById("error3").classList.remove("showError");
   }
 }
 
