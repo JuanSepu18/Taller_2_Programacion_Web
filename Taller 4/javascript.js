@@ -19,7 +19,7 @@ function checkUser(){
   validateField(field, document.getElementById("usernameSpecialChar"), /^\w*$/);
   validateField(field, document.getElementById("usernameMax"),/^.{0,20}$/);
   validateField(field, document.getElementById("usernameMin"),/^.{10,}$/);
-  validateField(field, field.querySelector(".error_required"), /^.+/g);
+  validateField(field, document.getElementById("usernameRequired"), /^.+/g);
 }
 
 // Validaciones del campo password

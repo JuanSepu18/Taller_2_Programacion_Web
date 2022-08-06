@@ -4,19 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src = "jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="grid.js"></script>
     <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">    
     <title>Grilla</title>
+    <style>
+        body{
+            position: relative;
+
+        }
+        .volver{
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+        }
+    </style>
 </head>
 <body>
-
+    <div class="volver">
+        <a href="../index.html">Volver</a>
+    </div>
     <div class="container">
         <div class = "section">
+            <div class="row">
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">search</i>
+                  <input id="filtro" type="text" class="validate">
+                  <label for="icon_prefix">Filtrar</label>
+                </div>
+            </div>
             <table>
                 <thead>
                     <tr>
-
                         <th>id</th>
                         <th>Name</th>
                         <th>Username</th>
@@ -26,27 +46,12 @@
                         <th>Website</th>
                         <th>Company</th>
                     </tr>
+                    </thead>
                 <tbody id="res">
-
-
-
-
-
                 </tbody>
-
-                </thead>
-
-
-
             </table>
-
-        
-        
         </div>
-
-
-
-
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>

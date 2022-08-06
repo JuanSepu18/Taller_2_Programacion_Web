@@ -6,7 +6,7 @@
 body{
     font-family: 'Poppins', sans-serif;
     font: 62.5%;
-    background-color: rgb(217, 242, 231);
+    background-color: rgb(246 255 251);;
 
 }
 main{
@@ -26,9 +26,18 @@ main{
 }
 h1{
     margin-bottom: 10px;
+    font-size: 28px;
 }
+label{
+    color:rgba(0, 0, 0, 1);
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: gray;
+    opacity: 1; /* Firefox */
+  }
 form{
     width: 50%;
+    margin-top: 50px;
     min-width: 300px;
     display: flex;
     flex-direction: column;
@@ -56,13 +65,23 @@ fieldset legend{
     flex-direction: column;
     height: Calc(54px + 18px + 2px);
     overflow: hidden;
+    position: relative;
 }
 
+.form_field-user,
 .form_field-password{
     height: fit-content
 }
 
 
+.usernameatt{
+    position: absolute;
+    top: 33px;
+    left: 3px;
+}
+#username{
+    padding-left: 20px;
+}
 .form_field input, select{
     height: 30px;
     border-radius: 30px;
@@ -123,10 +142,6 @@ fieldset legend{
     display: inline-block;
 }
 
-.passwordValidationsContainer{
-    display: none;
-}
-
 .passwordValidation{
     font-size: 14px;
 }
@@ -143,24 +158,47 @@ fieldset legend{
     font-weight: bold;
     font-size: 16px;
 
-    background-color: rgb(164, 255, 241);
+    background-color: rgb(171 255 164);
 }
 .submit_container{
-    width: 100%;
+    margin-top: 50px;
     display: flex;
     justify-content: center;
 }
 
 /* Desktop styles*/
 @media (min-width: 800px) {
+    form{
+        display: grid;
+        grid-template-rows: 1fr 50px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "basico detalles"
+                             "submit submit"
+    }
+    .fieldset_registrobasico{
+        grid-area: basico;
+        min-width: 300px;
+        max-width: none;
+        height: 100%;
+    }
+    .fieldset_detalles{
+        grid-area: detalles;
+        min-width: 380px;
+        max-width: none;
+        height: 100%;
+    }
+    .submit_container{
+        margin: 0px;
+        grid-area: submit;
+    }
     .fieldset_detalles{
         display: grid;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr auto;
         grid-template-columns: 1fr 1fr;
         grid-template-areas: "nombre apellido"
-                             "pais telefono"
-                             "direccion direccion"
-                             "email email";
+                             "birthdate edad"
+                             "email email"
+                             "enfermedades enfermedades";
         column-gap: 10px;
         row-gap: 5px;
     }
@@ -176,17 +214,21 @@ fieldset legend{
     .apellido{
         grid-area: apellido;
     }
-    .pais{
-        grid-area: pais;
+    .birthdate{
+        grid-area: birthdate;
     }
-    .direccion{
-        grid-area: direccion;
+    .edad{
+        grid-area: edad;
+        display: flex;
+        align-items: center;
+        font-weight: bolder;
     }
     .email{
         grid-area: email;
     }
-    .telefono{
-        grid-area: telefono;
+    .sectionEnfermedades{
+        width: 100%;
+        grid-area: enfermedades;
     }
     
 }
@@ -250,3 +292,14 @@ section.range-slider input:last-of-type::-moz-range-track {
   border: 0;
 }
 
+.hidden{
+    display: none;
+    height: 0px;
+    opacity: 0;
+    transition: all 0.5s linear;
+}
+
+.passwordValidationsContainer{
+    height: fit-content;
+    transition: all 0.5s linear;
+}
