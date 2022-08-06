@@ -1,13 +1,3 @@
-function show_gustos(){
-  botongustos = document.getElementById("gustos");
-
-  if((botongustos.checked)){
-    document.getElementById("gustosseccion").style.display = 'block';
-  }else{
-    document.getElementById("gustosseccion").style.display = 'none';
-  }
-}
-
 // Mostrar el cuadro de validaciones de la contraseña
 function showPasswordValidation(){
   document.getElementsByClassName("passwordValidationsContainer")[0].style.display= 'contents';
@@ -19,7 +9,7 @@ function checkUser(){
   validateField(field, document.getElementById("usernameSpecialChar"), /^\w*$/);
   validateField(field, document.getElementById("usernameMax"),/^.{0,20}$/);
   validateField(field, document.getElementById("usernameMin"),/^.{10,}$/);
-  validateField(field, field.querySelector(".error_required"), /^.+/g);
+  validateField(field, document.getElementById("usernameRequired"), /^.+/g);
 }
 
 // Validaciones del campo password
@@ -116,8 +106,6 @@ function comprobacion(){
 
   nombre = document.getElementById("nombre");
   apellido = document.getElementById("apellido");
-  direccion = document.getElementById("direccion");
-  var valordireccion = direccion.value; 
   if(nombre.value.length>25){
     document.getElementById("error1").classList.add("showError");
   }
@@ -130,13 +118,6 @@ function comprobacion(){
   }
   else{
     document.getElementById("error2").classList.remove("showError");
-  }
-
-  if(!/^cll|Cll|cra|Cra|Av|av|Anv|anv|Trans|trans/g.test(valordireccion)){
-    document.getElementById("error3").classList.add("showError");
-  }
-  else{
-    document.getElementById("error3").classList.remove("showError");
   }
 }
 
@@ -167,3 +148,71 @@ function getVals(){
           }
         }
   }
+
+  function enfermedadesCheck(e){
+    if(e.target.checked){
+      document.querySelector(".contagiosas").classList.remove("hidden");
+    }
+    else{
+      document.querySelector(".contagiosas").classList.add("hidden");
+      document.querySelector("#contagiosas_check").checked = false;
+    }
+
+  }
+
+  function contagiosasCheck(e){
+    if(e.target.checked){
+      document.querySelector(".contagiosas_input").classList.remove("hidden");
+    }
+    else{
+      document.querySelector(".contagiosas_input").classList.add("hidden");
+    }
+  }
+
+
+
+
+  // Calcular edad
+  function calcularEdad(){
+    let birthdate = new Date(new Date(document.querySelector("#birthdate").value).toUTCString());
+    if(birthdate){
+    let today = new Date();
+    let years = today.getFullYear() - birthdate.getFullYear();
+    let age = 0;
+    if(today.getMonth() > birthdate.getMonth() || (today.getMonth() == birthdate.getMonth() && today.getDate() >= birthdate.getDate())){
+      age = years;
+    }
+    else{
+      age = years-1;
+    }
+    if(age){
+    document.querySelector(".edad p").innerHTML = "Edad: "+ age;
+    }
+    else{
+      document.querySelector(".edad p").innerHTML = "Edad: ";
+    }  
+  }
+  }
+
+  // Materialize
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.datepicker');
+    let options = {
+      autoClose: true,
+      minDate: new Date('1909-01-01'),
+      maxDate: new Date(),
+      yearRange: 30,
+      format: 'yyyy-mm-dd',
+      onSelect: calcularEdad(),
+    }
+    var instances = M.Datepicker.init(elems, options);
+
+    var elems = document.querySelectorAll('.chips');
+    var instances = M.Chips.init(elems, {placeholder: '+Enfermedad'});
+
+    document.querySelector("#birthdate").addEventListener("onchange", ()=>{
+      console.log("i changed!");
+      calcularEdad();
+    })
+  });
